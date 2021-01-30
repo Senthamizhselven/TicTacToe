@@ -1,0 +1,6 @@
+<button nbButton outline status="danger" (click)="newGame()">Start new Game</button>
+<button nbButton outline status="info" (click)="changeMode()" class="btn-mode">Change Mode</button>
+<h2>Current Player: {{xIsPlaying?'X':'O'}}</h2>
+<h2 *ngIf="winner">Player {{winner}} won the game!</h2>
+<h5>X points: {{xWinCount}}</h5>
+<h5>O points: {{oWinCount}}</h5>

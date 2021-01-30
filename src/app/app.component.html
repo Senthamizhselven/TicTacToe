@@ -1,0 +1,36 @@
+<nb-layout center>
+
+  <nb-layout-header fixed>
+    <!-- Insert header here -->
+    <h1>Tic Tac Toe</h1>
+  </nb-layout-header>
+
+  <nb-layout-column>
+
+    <button nbButton outline fullWidth status="success" (click)="twoPlayerSingle()" *ngIf="!gameMode">
+      Player vs Player
+    </button>
+
+    <button nbButton fullWidth status="warning" (click)="onePlayerComputer()" *ngIf="!gameMode">
+      Player vs Computer
+    </button>
+
+    <button nbButton outline fullWidth status="info" (click)="twoPlayerSingle()" *ngIf="!gameMode" disabled>
+      Multiplayer (Coming Soon)
+    </button>
+
+    <app-game-control *ngIf="gameMode"></app-game-control>
+
+  </nb-layout-column>
+
+  <nb-layout-column *ngIf="gameMode">
+    <app-board></app-board>
+    <!-- <router-outlet></router-outlet> -->
+  </nb-layout-column>
+
+  <!-- <nb-layout-footer fixed> -->
+  <!-- Insert footer here -->
+  <!-- <p>Senthamil Selven</p> -->
+  <!-- </nb-layout-footer> -->
+
+</nb-layout>
